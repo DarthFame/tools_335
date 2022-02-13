@@ -1,0 +1,10 @@
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (-9097.19, 409.194, 92.4092, 0.715864, 0, 'Вход_в_Штормград');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (5858.8, 2103.7, 635.929, 3.61281, 571, 'Вход_в_Ледяную_Корону');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (-8814.94, 664.67, 95.4234, 4.72446, 0, 'аук_штормград');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (-10454.9, -3811.52, 18.067, 2.32231, 0, 'Храм_АталХаккара');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (3781.04, 6942.73, 104.756, 5.62126, 571, 'Нексус');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (12596.8, -6802.65, 13.2922, 5.21107, 530, 'Плато_Солнечного_Колодца');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (3690.12, 2152.46, 34.8981, 3.9427, 571, 'Азол_Неруб');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (8537.32, 620.025, 547.822, 5.7839, 571, 'Ристалище_Серебрянного_Турнира');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (6825.17, -7771.2, 128.678, 4.29488, 530, 'Зул_Аман');
+INSERT INTO `game_tele` (`position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (-7620.42, -1222.31, 232.261, 3.97936, 0, 'Пик_Черной_горы');
