@@ -13,18 +13,18 @@ SET @menuid:=62000;
 SET @textid:=300000;
 
  
--- DELETE FROM creature_template WHERE entry = '190000';
+DELETE FROM creature_template WHERE entry = @entry;
  
 INSERT INTO creature_template (`entry`, `modelid1`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `DamageModifier`, `unit_class`, `unit_flags`, `type`, `type_flags`, `MovementType`, `RegenHealth`, `flags_extra`, `AiName`) VALUES
 (@entry, '26917', "Мастер телепортации", "", 'Directions', @menuid, 71, 71, 1.56, 1.56, 1.56, 35, 3, 1, 1.14286, 1.25, 1, 1, 1, 2, 7, 138936390, 0, 1, 2, 'SmartAI');
  
--- DELETE FROM creature_template_addon WHERE Entry = @entry ;
+DELETE FROM creature_template_addon WHERE Entry = @entry ;
  
 INSERT INTO creature_template_addon (`entry`, `mount`, `bytes1`, `bytes2`, `emote`, `path_id`, `auras`) VALUES
 (@entry, 0, 0, 0, 0, 0, '35766');
---  
--- DELETE FROM gossip_menu WHERE `MenuID`>@menuid-1 AND `MenuID`<@menuid+9;
--- DELETE FROM npc_text WHERE `ID`>@textid-1 AND `ID`<@textid+5;
+ 
+DELETE FROM gossip_menu WHERE `MenuID` > @menuid-1 AND `MenuID` < @menuid+9;
+DELETE FROM npc_text WHERE `ID` > @textid-1 AND `ID` < @textid+5;
  
 INSERT INTO gossip_menu (`MenuID`, `TextID`) VALUES
 (@menuid+4, @textid+3),
@@ -45,9 +45,9 @@ INSERT INTO npc_text (`ID`, `text0_0`, `em0_1`) VALUES
 (@textid+1, '$B Для Альянса!$B', 6),
 (@textid, '$B Для Орды!$B', 6);
  
--- DELETE FROM gossip_menu_option WHERE `menuid` > @menuid-1 AND `menuid` < @menuid+9;
--- DELETE FROM smart_scripts WHERE `entryorguid` = @entry;
--- DELETE FROM conditions WHERE (`SourceTypeOrReferenceId` = 15 OR `SourceTypeOrReferenceId`=14) AND (`SourceGroup` > @menuid-1 AND `SourceGroup` < @menuid+9);
+DELETE FROM gossip_menu_option WHERE `menuid` > @menuid-1 AND `menuid` < @menuid+9;
+DELETE FROM smart_scripts WHERE `entryorguid` = @entry;
+DELETE FROM conditions WHERE (`SourceTypeOrReferenceId` = 15 OR `SourceTypeOrReferenceId`=14) AND (`SourceGroup` > @menuid-1 AND `SourceGroup` < @menuid+9);
  
 INSERT INTO conditions (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `ConditionTypeOrReference`, `ConditionValue1`, `Comment`) VALUES
 (15, @menuid, 1, 6, 469, 'Stormwind'),
@@ -497,7 +497,7 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 (@entry, 0, 131, 0, 62, 0, 100, 0, @menuid+8, 9, 0, 0, 0, 62, 571, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 4522.23, 2828.01, 389.975, 0.215009, 'Teleporter script');
 
  
--- delete from creature WHERE ID = @entry; 
+delete from creature WHERE ID1 = @entry;
 -- ALTER TABLE creature AUTO_INCREMENT=200000;
 
 INSERT INTO creature (`id1`,`map`,`spawnMask`,`phaseMask`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`wander_distance`,`curhealth`,`curmana`) VALUES
